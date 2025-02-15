@@ -105,7 +105,7 @@ pipeline {
        stage("Trigger CD Pipeline") {
             steps {
                 script {
-                   sh "curl -v -k --user dhruv-patel:${JENKINS_API_TOKEN} -X POST -H 'cache-control: no-cache' -H 'content-type: application/x-www-form-urlencoded' --data 'IMAGE_TAG=${IMAGE_TAG}' '74.235.30.216:8080/job/gitops-register-app-cd/build?token=TOKEN_NAME'"
+                   sh "curl -v -k --user dhruv-patel:${JENKINS_API_TOKEN} -X POST -H 'cache-control: no-cache' -H 'content-type: application/x-www-form-urlencoded' --data 'IMAGE_TAG=${IMAGE_TAG}' 'http://74.235.30.216:8080/job/gitops-register-app-cd/build?token=TOKEN_NAME'"
 		  //    sh "curl -v -k --user dhruv-patel:${JENKINS_API_TOKEN} -X POST  "http://74.235.30.216:8080/job/gitops-register-app-cd/buildWithParameters?token=gitops-token&IMAGE_TAG=latest"
 
                 }
